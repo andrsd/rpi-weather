@@ -1,0 +1,317 @@
+#:kivy 1.0.9
+
+#:set left_margin 10
+#:set icon_size 128
+
+# Define your background color Template
+<BackgroundColor@Widget>
+    background_color: 1, 1, 1, 1
+    canvas.before:
+        Color:
+            rgba: root.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+# Now you can simply Mix the `BackgroundColor` class with almost
+# any other widget... to give it a background.
+<BackgroundLabel@Label+BackgroundColor>
+    background_color: 0, 0, 0.1, 0
+
+<MainWidget>:
+    icon: icon
+    current_temperature: current_temperature
+    today_lo_hi: today_lo_hi
+
+    hour1: hour1
+    hour2: hour2
+    hour3: hour3
+    hour4: hour4
+    temp_hour1: temp_hour1
+    temp_hour2: temp_hour2
+    temp_hour3: temp_hour3
+    temp_hour4: temp_hour4
+
+    day_name1: day_name1
+    day_name2: day_name2
+    day_name3: day_name3
+    day_name4: day_name4
+    day_name5: day_name5
+
+    day_lo_hi1: day_lo_hi1
+    day_lo_hi2: day_lo_hi2
+    day_lo_hi3: day_lo_hi3
+    day_lo_hi4: day_lo_hi4
+    day_lo_hi5: day_lo_hi5
+
+    canvas:
+        Color:
+            rgb: 1, 1, 1
+        Rectangle:
+            source: 'icons/bkgnd.jpg'
+            size: sp(800), sp(480)
+
+        # left bkgnd
+        Color:
+            rgba: 1, 1, 1, 0.25
+        Rectangle:
+            pos: sp(0), sp(0)
+            size: sp(480), sp(480)
+
+        # right bkgnd
+        Color:
+            rgba: 1, 1, 1, 0.1
+        Rectangle:
+            pos: sp(480), sp(0)
+            size: sp(320), sp(480)
+
+        # # placeholder for the icon
+        # Color:
+        #     rgba: 0.25, 0.25, 0.25, 1
+        # Rectangle:
+        #     pos: sp(20), sp(480-20-icon_size)
+        #     size: sp(icon_size), sp(icon_size)
+
+        Color:
+            rgba: 1, 1, 1, 1
+        Line:
+            points: sp(20), sp(170), sp(480-20), sp(170)
+            width: sp(1)
+
+    # image
+    Image:
+        id: icon
+        source: 'icons/weather-clear-day.png'
+        pos: sp(20), sp(480-20-icon_size)
+        size: sp(128), sp(128)
+        allow_stretch: True
+
+    BackgroundLabel:
+        id: current_temperature
+        font_size: sp(180)
+        pos: sp(10+icon_size+30), sp(480-20-180)
+        size: sp(480-icon_size-20-20-20), sp(180)
+        text: ""
+        text_size: self.size
+        halign: 'right'
+        valign: 'bottom'
+        bold: True
+        markup: True
+
+    BackgroundLabel:
+        id: today_lo_hi
+        pos: sp(10+icon_size+30), sp(480-20-180-70-5)
+        size: sp(480-icon_size-20-20-20), sp(80)
+        font_size: sp(80)
+        text: ""
+        text_size: self.size
+        halign: 'center'
+        valign: 'middle'
+        markup: True
+
+
+    BackgroundLabel:
+        id: hour1
+        pos: sp(15), sp(100)
+        size: sp(100), sp(45)
+        font_size: sp(45)
+        text: ""
+        text_size: self.size
+        halign: 'center'
+        valign: 'middle'
+
+    BackgroundLabel:
+        id: hour2
+        pos: sp(130), sp(100)
+        size: sp(100), sp(45)
+        font_size: sp(45)
+        text: ""
+        text_size: self.size
+        halign: 'center'
+        valign: 'middle'
+
+    BackgroundLabel:
+        id: hour3
+        pos: sp(245), sp(100)
+        size: sp(100), sp(45)
+        font_size: sp(45)
+        text: ""
+        text_size: self.size
+        halign: 'center'
+        valign: 'middle'
+
+    BackgroundLabel:
+        id: hour4
+        pos: sp(360), sp(100)
+        size: sp(100), sp(45)
+        font_size: sp(45)
+        text: ""
+        text_size: self.size
+        halign: 'center'
+        valign: 'middle'
+
+
+    BackgroundLabel:
+        id: temp_hour1
+        pos: sp(15), sp(45)
+        size: sp(100), sp(45)
+        font_size: sp(45)
+        text: ""
+        text_size: self.size
+        halign: 'right'
+        valign: 'middle'
+        markup: True
+
+    BackgroundLabel:
+        id: temp_hour2
+        pos: sp(130), sp(45)
+        size: sp(100), sp(45)
+        font_size: sp(45)
+        text: ""
+        text_size: self.size
+        halign: 'right'
+        valign: 'middle'
+        markup: True
+
+    BackgroundLabel:
+        id: temp_hour3
+        pos: sp(245), sp(45)
+        size: sp(100), sp(45)
+        font_size: sp(45)
+        text: ""
+        text_size: self.size
+        halign: 'right'
+        valign: 'middle'
+        markup: True
+
+    BackgroundLabel:
+        id: temp_hour4
+        pos: sp(360), sp(45)
+        size: sp(100), sp(45)
+        font_size: sp(45)
+        text: ""
+        text_size: self.size
+        halign: 'right'
+        valign: 'middle'
+        markup: True
+
+
+    BackgroundLabel:
+        font_size: sp(15)
+        pos: sp(10), sp(5)
+        size: sp(460), sp(15)
+        text: "Powered by [ref=https://darksky.net/poweredby/]Dark Sky[/ref]"
+        text_size: self.size
+        halign: 'left'
+        valign: 'bottom'
+        markup: True
+
+    # right pane
+
+    BackgroundLabel:
+        id: day_name1
+        font_size: sp(70)
+        pos: sp(480+20), sp(480-10-90)
+        size: sp(80), sp(70)
+        text: ""
+        text_size: self.size
+        halign: 'left'
+        valign: 'bottom'
+
+    BackgroundLabel:
+        id: day_lo_hi1
+        font_size: sp(60)
+        pos: sp(480+20+90), sp(480-7-90)
+        size: sp(190), sp(60)
+        text: ""
+        text_size: self.size
+        halign: 'center'
+        valign: 'bottom'
+        markup: True
+
+
+    BackgroundLabel:
+        id: day_name2
+        font_size: sp(70)
+        pos: sp(480+20), sp(480-10-90-90)
+        size: sp(80), sp(70)
+        text: ""
+        text_size: self.size
+        halign: 'left'
+        valign: 'bottom'
+
+    BackgroundLabel:
+        id: day_lo_hi2
+        font_size: sp(60)
+        pos: sp(480+20+90), sp(480-7-90-90)
+        size: sp(190), sp(60)
+        text: ""
+        text_size: self.size
+        halign: 'center'
+        valign: 'bottom'
+        markup: True
+
+
+    BackgroundLabel:
+        id: day_name3
+        font_size: sp(70)
+        pos: sp(480+20), sp(480-10-90-90-90)
+        size: sp(80), sp(70)
+        text: ""
+        text_size: self.size
+        halign: 'left'
+        valign: 'bottom'
+
+    BackgroundLabel:
+        id: day_lo_hi3
+        font_size: sp(60)
+        pos: sp(480+20+90), sp(480-7-90-90-90)
+        size: sp(190), sp(60)
+        text: ""
+        text_size: self.size
+        halign: 'center'
+        valign: 'bottom'
+        markup: True
+
+
+    BackgroundLabel:
+        id: day_name4
+        font_size: sp(70)
+        pos: sp(480+20), sp(480-10-90-90-90-90)
+        size: sp(80), sp(70)
+        text: ""
+        text_size: self.size
+        halign: 'left'
+        valign: 'bottom'
+
+    BackgroundLabel:
+        id: day_lo_hi4
+        font_size: sp(60)
+        pos: sp(480+20+90), sp(480-7-90-90-90-90)
+        size: sp(190), sp(60)
+        text: ""
+        text_size: self.size
+        halign: 'center'
+        valign: 'bottom'
+        markup: True
+
+
+    BackgroundLabel:
+        id: day_name5
+        font_size: sp(70)
+        pos: sp(480+20), sp(480-10-90-90-90-90-90)
+        size: sp(80), sp(70)
+        text: ""
+        text_size: self.size
+        halign: 'left'
+        valign: 'bottom'
+
+    BackgroundLabel:
+        id: day_lo_hi5
+        font_size: sp(60)
+        pos: sp(480+20+90), sp(480-7-90-90-90-90-90)
+        size: sp(190), sp(60)
+        text: ""
+        text_size: self.size
+        halign: 'center'
+        valign: 'bottom'
+        markup: True

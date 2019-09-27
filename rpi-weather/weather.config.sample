@@ -1,0 +1,17 @@
+[graphics]
+width = 800
+height = 480
+resizable = 0
+allow_screensaver = 0
+
+[geolite2]
+db = data/GeoLite2-City.mmdb
+
+[darksky]
+api_key = put_your_dark_sky_api_here
+# nice units
+units = ca
+
+[main]
+# refresh every hour
+refresh = 3600
