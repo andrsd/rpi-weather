@@ -1,0 +1,310 @@
+#:kivy 1.0.9
+
+# Using icons made by Freepik from www.flaticon.com
+
+#:set width 800
+#:set height 480
+#:set margin 20
+
+<Layout2>:
+    current_temperature: current_temperature
+    day_lo_hi: day_lo_hi
+    precip_icon: precip_icon
+    precip_chance: precip_chance
+    wind_icon: wind_icon
+    wind: wind
+
+    day1_name: day1_name
+    day1_icon: day1_icon
+    day1_hi: day1_hi
+    day1_lo: day1_lo
+    day1_precip: day1_precip
+    day1_wind: day1_wind
+
+    day2_name: day2_name
+    day2_icon: day2_icon
+    day2_hi: day2_hi
+    day2_lo: day2_lo
+    day2_precip: day2_precip
+    day2_wind: day2_wind
+
+    day3_name: day3_name
+    day3_icon: day3_icon
+    day3_hi: day3_hi
+    day3_lo: day3_lo
+    day3_precip: day3_precip
+    day3_wind: day3_wind
+
+    canvas:
+        Color:
+            rgb: 0, 0.4, 0.8
+        Rectangle:
+            size: sp(800), sp(480)
+
+        Color:
+            rgba: 1, 1, 1, 1
+        Line:
+            points: sp(645), sp(30), sp(645), sp(460)
+            width: sp(1)
+        Line:
+            points: sp(505), sp(30), sp(505), sp(460)
+            width: sp(1)
+        Line:
+            points: sp(365), sp(30), sp(365), sp(460)
+            width: sp(1)
+
+    BackgroundLabel:
+        id: current_temperature
+        font_size: sp(190)
+        pos: sp(margin), sp(height-margin-170)
+        size: sp(320), sp(200)
+        text: "23°"
+        text_size: self.size
+        halign: 'right'
+        valign: 'top'
+        bold: True
+
+    BackgroundLabel:
+        id: day_lo_hi
+        font_size: sp(70)
+        pos: sp(margin), sp(margin+20+60+100)
+        size: sp(320), sp(100)
+        text: "19° / [b]28°[/b]"
+        text_size: self.size
+        halign: 'center'
+        valign: 'bottom'
+        markup: True
+
+
+    Image:
+        id: precip_icon
+        source: 'icons/layout2/water-drop.png'
+        pos: sp(margin+20), sp(margin+20+60+10)
+        size: sp(40), sp(40)
+        allow_stretch: True
+
+    BackgroundLabel:
+        id: precip_chance
+        font_size: sp(50)
+        pos: sp(margin+170), sp(margin+20+60)
+        size: sp(140), sp(60)
+        text: "100%"
+        text_size: self.size
+        halign: 'right'
+        valign: 'bottom'
+        bold: True
+
+    Image:
+        id: wind_icon
+        source: 'icons/layout2/wind.png'
+        pos: sp(margin+20), sp(margin+20)
+        size: sp(40), sp(40)
+        allow_stretch: True
+
+    BackgroundLabel:
+        id: wind
+        font_size: sp(50)
+        pos: sp(margin+70), sp(margin+10)
+        size: sp(240), sp(60)
+        text: "SW [b]130[/b]"
+        text_size: self.size
+        halign: 'right'
+        valign: 'bottom'
+        markup: True
+
+
+    BackgroundLabel:
+        id: day1_name
+        font_size: sp(40)
+        pos: sp(width-margin-140-140-140+10), sp(height-margin-50)
+        size: sp(130), sp(50)
+        text: "MON"
+        text_size: self.size
+        halign: 'center'
+        valign: 'bottom'
+        markup: True
+
+    Image:
+        id: day1_icon
+        pos: sp(width-margin-140-140-140+10+16), sp(margin+10+240)
+        size: sp(96), sp(96)
+        source: 'icons/layout2/weather-clear-day.png'
+        allow_stretch: True
+
+    BackgroundLabel:
+        id: day1_hi
+        font_size: sp(35)
+        pos: sp(width-margin-140-140-140+10), sp(margin+10+50+50+50)
+        size: sp(130), sp(45)
+        text: "10°"
+        text_size: self.size
+        halign: 'center'
+        valign: 'bottom'
+        bold: True
+
+    BackgroundLabel:
+        id: day1_lo
+        font_size: sp(35)
+        pos: sp(width-margin-140-140-140+10), sp(margin+10+50+50)
+        size: sp(130), sp(45)
+        text: "9°"
+        text_size: self.size
+        halign: 'center'
+        valign: 'bottom'
+
+    BackgroundLabel:
+        id: day1_precip
+        font_size: sp(35)
+        pos: sp(width-margin-140-140-140+10), sp(margin+10+50)
+        size: sp(130), sp(45)
+        text: "100%"
+        text_size: self.size
+        halign: 'center'
+        valign: 'bottom'
+        bold: True
+
+    BackgroundLabel:
+        id: day1_wind
+        font_size: sp(35)
+        pos: sp(width-margin-140-140-140+10), sp(margin+10)
+        size: sp(130), sp(45)
+        text: "10"
+        text_size: self.size
+        halign: 'center'
+        valign: 'bottom'
+        bold: True
+
+
+    BackgroundLabel:
+        id: day2_name
+        font_size: sp(40)
+        pos: sp(width-margin-140-140+10), sp(height-margin-50)
+        size: sp(130), sp(50)
+        text: "TUE"
+        text_size: self.size
+        halign: 'center'
+        valign: 'bottom'
+        markup: True
+
+    Image:
+        id: day2_icon
+        pos: sp(width-margin-140-140+10+16), sp(margin+10+240)
+        size: sp(96), sp(96)
+        source: 'icons/layout2/weather-clear-day.png'
+        allow_stretch: True
+
+    BackgroundLabel:
+        id: day2_hi
+        font_size: sp(35)
+        pos: sp(width-margin-140-140+10), sp(margin+10+50+50+50)
+        size: sp(130), sp(45)
+        text: "10°"
+        text_size: self.size
+        halign: 'center'
+        valign: 'bottom'
+        bold: True
+
+    BackgroundLabel:
+        id: day2_lo
+        font_size: sp(35)
+        pos: sp(width-margin-140-140+10), sp(margin+10+50+50)
+        size: sp(130), sp(45)
+        text: "9°"
+        text_size: self.size
+        halign: 'center'
+        valign: 'bottom'
+
+    BackgroundLabel:
+        id: day2_precip
+        font_size: sp(35)
+        pos: sp(width-margin-140-140+10), sp(margin+10+50)
+        size: sp(130), sp(45)
+        text: "100%"
+        text_size: self.size
+        halign: 'center'
+        valign: 'bottom'
+        bold: True
+
+    BackgroundLabel:
+        id: day2_wind
+        font_size: sp(35)
+        pos: sp(width-margin-140-140+10), sp(margin+10)
+        size: sp(130), sp(45)
+        text: "10"
+        text_size: self.size
+        halign: 'center'
+        valign: 'bottom'
+        bold: True
+
+
+    BackgroundLabel:
+        id: day3_name
+        font_size: sp(40)
+        pos: sp(width-margin-140+10), sp(height-margin-50)
+        size: sp(130), sp(50)
+        text: "WED"
+        text_size: self.size
+        halign: 'center'
+        valign: 'bottom'
+        markup: True
+
+    Image:
+        id: day3_icon
+        pos: sp(width-margin-140+10+16), sp(margin+10+240)
+        size: sp(96), sp(96)
+        source: 'icons/layout2/weather-clear-day.png'
+        allow_stretch: True
+
+    BackgroundLabel:
+        id: day3_hi
+        font_size: sp(35)
+        pos: sp(width-margin-140+10), sp(margin+10+50+50+50)
+        size: sp(130), sp(45)
+        text: "10°"
+        text_size: self.size
+        halign: 'center'
+        valign: 'bottom'
+        bold: True
+
+    BackgroundLabel:
+        id: day3_lo
+        font_size: sp(35)
+        pos: sp(width-margin-140+10), sp(margin+10+50+50)
+        size: sp(130), sp(45)
+        text: "9°"
+        text_size: self.size
+        halign: 'center'
+        valign: 'bottom'
+
+    BackgroundLabel:
+        id: day3_precip
+        font_size: sp(35)
+        pos: sp(width-margin-140+10), sp(margin+10+50)
+        size: sp(130), sp(45)
+        text: "100%"
+        text_size: self.size
+        halign: 'center'
+        valign: 'bottom'
+        bold: True
+
+    BackgroundLabel:
+        id: day3_wind
+        font_size: sp(35)
+        pos: sp(width-margin-140+10), sp(margin+10)
+        size: sp(130), sp(45)
+        text: "10"
+        text_size: self.size
+        halign: 'center'
+        valign: 'bottom'
+        bold: True
+
+
+    Label:
+        font_size: sp(15)
+        pos: sp(margin), sp(5)
+        size: sp(width-2*margin), sp(15)
+        text: "Powered by [ref=https://darksky.net/poweredby/]Dark Sky[/ref]"
+        text_size: self.size
+        halign: 'right'
+        valign: 'bottom'
+        markup: True
