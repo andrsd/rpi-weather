@@ -27,7 +27,6 @@ class MainWidget(Widget):
             Config.get('darksky', 'api_key'),
             *self.location,
             units = Config.get('darksky', 'units'))
-        self.update()
 
     def get_location(self):
         mmdb_file = Config.get('geolite2', 'db')
@@ -68,6 +67,7 @@ class WeatherApp(App):
         module = sys.modules[layout]
         class_ = getattr(module, layout)
         main = class_()
+        main.update()
 
         Clock.schedule_interval(main.refresh, int(Config.get('main', 'refresh')))
         return main
