@@ -8,6 +8,7 @@
 
 <Layout2>:
     current_temperature: current_temperature
+    feels_like: feels_like
     day_lo_hi: day_lo_hi
     precip_icon: precip_icon
     precip_chance: precip_chance
@@ -55,20 +56,31 @@
 
     BackgroundLabel:
         id: current_temperature
-        font_size: sp(190)
-        pos: sp(margin), sp(height-margin-170)
-        size: sp(320), sp(200)
-        text: "23°"
+        font_size: sp(160)
+        pos: sp(margin), sp(height-margin-130)
+        size: sp(320), sp(160)
+        text: "-23°"
         text_size: self.size
         halign: 'right'
         valign: 'top'
         bold: True
 
     BackgroundLabel:
+        id: feels_like
+        font_size: sp(55)
+        pos: sp(margin), sp(height-margin-195)
+        size: sp(320), sp(60)
+        text: "Feels [b]-23°[/b]"
+        text_size: self.size
+        halign: 'center'
+        valign: 'top'
+        markup: True
+
+    BackgroundLabel:
         id: day_lo_hi
-        font_size: sp(70)
-        pos: sp(margin), sp(margin+20+60+100)
-        size: sp(320), sp(100)
+        font_size: sp(60)
+        pos: sp(margin), sp(margin+20+60+70)
+        size: sp(320), sp(70)
         text: "19° / [b]28°[/b]"
         text_size: self.size
         halign: 'center'
@@ -79,14 +91,14 @@
     Image:
         id: precip_icon
         source: 'icons/layout2/water-drop.png'
-        pos: sp(margin+20), sp(margin+20+60+10)
+        pos: sp(margin+20), sp(margin+20+50+10)
         size: sp(40), sp(40)
         allow_stretch: True
 
     BackgroundLabel:
         id: precip_chance
         font_size: sp(50)
-        pos: sp(margin+170), sp(margin+20+60)
+        pos: sp(margin+170), sp(margin+20+50)
         size: sp(140), sp(60)
         text: "100%"
         text_size: self.size
@@ -126,16 +138,16 @@
 
     Image:
         id: day1_icon
-        pos: sp(width-margin-140-140-140+10+16), sp(margin+10+240)
+        pos: sp(width-margin-140-140-140+10+16), sp(margin+10+250)
         size: sp(96), sp(96)
         source: 'icons/layout2/weather-clear-day.png'
         allow_stretch: True
 
     BackgroundLabel:
         id: day1_hi
-        font_size: sp(35)
-        pos: sp(width-margin-140-140-140+10), sp(margin+10+50+50+50)
-        size: sp(130), sp(45)
+        font_size: sp(40)
+        pos: sp(width-margin-140-140-140+10), sp(margin+10+55+55+55)
+        size: sp(130), sp(50)
         text: "10°"
         text_size: self.size
         halign: 'center'
@@ -144,9 +156,9 @@
 
     BackgroundLabel:
         id: day1_lo
-        font_size: sp(35)
-        pos: sp(width-margin-140-140-140+10), sp(margin+10+50+50)
-        size: sp(130), sp(45)
+        font_size: sp(40)
+        pos: sp(width-margin-140-140-140+10), sp(margin+10+55+55)
+        size: sp(130), sp(50)
         text: "9°"
         text_size: self.size
         halign: 'center'
@@ -154,9 +166,9 @@
 
     BackgroundLabel:
         id: day1_precip
-        font_size: sp(35)
-        pos: sp(width-margin-140-140-140+10), sp(margin+10+50)
-        size: sp(130), sp(45)
+        font_size: sp(40)
+        pos: sp(width-margin-140-140-140+10), sp(margin+10+55)
+        size: sp(130), sp(50)
         text: "100%"
         text_size: self.size
         halign: 'center'
@@ -165,9 +177,9 @@
 
     BackgroundLabel:
         id: day1_wind
-        font_size: sp(35)
+        font_size: sp(40)
         pos: sp(width-margin-140-140-140+10), sp(margin+10)
-        size: sp(130), sp(45)
+        size: sp(130), sp(50)
         text: "10"
         text_size: self.size
         halign: 'center'
@@ -188,16 +200,16 @@
 
     Image:
         id: day2_icon
-        pos: sp(width-margin-140-140+10+16), sp(margin+10+240)
+        pos: sp(width-margin-140-140+10+16), sp(margin+10+250)
         size: sp(96), sp(96)
         source: 'icons/layout2/weather-clear-day.png'
         allow_stretch: True
 
     BackgroundLabel:
         id: day2_hi
-        font_size: sp(35)
-        pos: sp(width-margin-140-140+10), sp(margin+10+50+50+50)
-        size: sp(130), sp(45)
+        font_size: sp(40)
+        pos: sp(width-margin-140-140+10), sp(margin+10+55+55+55)
+        size: sp(130), sp(50)
         text: "10°"
         text_size: self.size
         halign: 'center'
@@ -206,9 +218,9 @@
 
     BackgroundLabel:
         id: day2_lo
-        font_size: sp(35)
-        pos: sp(width-margin-140-140+10), sp(margin+10+50+50)
-        size: sp(130), sp(45)
+        font_size: sp(40)
+        pos: sp(width-margin-140-140+10), sp(margin+10+55+55)
+        size: sp(130), sp(50)
         text: "9°"
         text_size: self.size
         halign: 'center'
@@ -216,9 +228,9 @@
 
     BackgroundLabel:
         id: day2_precip
-        font_size: sp(35)
-        pos: sp(width-margin-140-140+10), sp(margin+10+50)
-        size: sp(130), sp(45)
+        font_size: sp(40)
+        pos: sp(width-margin-140-140+10), sp(margin+10+55)
+        size: sp(130), sp(50)
         text: "100%"
         text_size: self.size
         halign: 'center'
@@ -227,9 +239,9 @@
 
     BackgroundLabel:
         id: day2_wind
-        font_size: sp(35)
+        font_size: sp(40)
         pos: sp(width-margin-140-140+10), sp(margin+10)
-        size: sp(130), sp(45)
+        size: sp(130), sp(50)
         text: "10"
         text_size: self.size
         halign: 'center'
@@ -250,16 +262,16 @@
 
     Image:
         id: day3_icon
-        pos: sp(width-margin-140+10+16), sp(margin+10+240)
+        pos: sp(width-margin-140+10+16), sp(margin+10+250)
         size: sp(96), sp(96)
         source: 'icons/layout2/weather-clear-day.png'
         allow_stretch: True
 
     BackgroundLabel:
         id: day3_hi
-        font_size: sp(35)
-        pos: sp(width-margin-140+10), sp(margin+10+50+50+50)
-        size: sp(130), sp(45)
+        font_size: sp(40)
+        pos: sp(width-margin-140+10), sp(margin+10+55+55+55)
+        size: sp(130), sp(50)
         text: "10°"
         text_size: self.size
         halign: 'center'
@@ -268,9 +280,9 @@
 
     BackgroundLabel:
         id: day3_lo
-        font_size: sp(35)
-        pos: sp(width-margin-140+10), sp(margin+10+50+50)
-        size: sp(130), sp(45)
+        font_size: sp(40)
+        pos: sp(width-margin-140+10), sp(margin+10+55+55)
+        size: sp(130), sp(50)
         text: "9°"
         text_size: self.size
         halign: 'center'
@@ -278,9 +290,9 @@
 
     BackgroundLabel:
         id: day3_precip
-        font_size: sp(35)
-        pos: sp(width-margin-140+10), sp(margin+10+50)
-        size: sp(130), sp(45)
+        font_size: sp(40)
+        pos: sp(width-margin-140+10), sp(margin+10+55)
+        size: sp(130), sp(50)
         text: "100%"
         text_size: self.size
         halign: 'center'
@@ -289,9 +301,9 @@
 
     BackgroundLabel:
         id: day3_wind
-        font_size: sp(35)
+        font_size: sp(40)
         pos: sp(width-margin-140+10), sp(margin+10)
-        size: sp(130), sp(45)
+        size: sp(130), sp(50)
         text: "10"
         text_size: self.size
         halign: 'center'

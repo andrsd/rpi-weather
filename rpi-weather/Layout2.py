@@ -13,6 +13,7 @@ class Layout2(MainWidget):
 
     def update(self):
         self.current_temperature.text = "{}°".format(int(round(self.weather.currently.temperature)))
+        self.feels_like.text = "Feels  [b]{}°[/b]".format(int(round(self.weather.currently.apparentTemperature)))
         self.day_lo_hi.text = "{}° / [b]{}°[/b]".format(
             int(round(self.weather.daily[0].temperatureMin)),
             int(round(self.weather.daily[0].temperatureMax))
