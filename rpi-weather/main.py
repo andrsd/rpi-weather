@@ -47,10 +47,14 @@ class MainWidget(Widget):
             self.name = Config.getdefault('location', 'name', None)
 
     def refresh(self, dt):
-        self.weather.refresh(
-            units = Config.get('darksky', 'units')
-        )
-        self.update()
+        try:
+            self.weather.refresh(
+                units = Config.get('darksky', 'units')
+            )
+            self.update()
+        except ConnectionError as e:
+            # silently do not do anything
+            pass
 
     def update(self):
         pass
